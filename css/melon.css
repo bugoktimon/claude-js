@@ -1,0 +1,106 @@
+:root {
+  --accent: #5b3fa6;
+  --ink: #1c1f1d;
+  --muted: #7a7f7c;
+  --line: #ececec;
+  --surface: #f5f5f4;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: #fff;
+  font-family: Pretendard, -apple-system, sans-serif;
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+}
+button { font: inherit; }
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+
+.header { padding: 24px 0 8px; }
+.title { margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
+.h2 { margin: 32px 0 16px; font-size: 18px; font-weight: 700; }
+
+/* Top 12 slide banner */
+.top-banner { min-width: 0; }
+.top-banner .swiper { padding-bottom: 40px; }
+.swiper-button-prev,
+.swiper-button-next { color: var(--ink); }
+.swiper-pagination-bullet-active { background: var(--accent); }
+
+/* Card (reference: melon_01) */
+.card { display: flex; flex-direction: column; gap: 12px; }
+.card-thumb { position: relative; }
+.rank-badge {
+  position: absolute; top: 0; left: 0; z-index: 1;
+  min-width: 34px; padding: 4px 10px;
+  border-radius: 10px 0 10px 0;
+  background: var(--accent); color: #fff;
+  font-size: 18px; font-weight: 800; text-align: center;
+}
+.card-info { min-width: 0; }
+.card-title {
+  font-size: 15px; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-artist {
+  margin-top: 2px; font-size: 13px; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.card-foot { display: flex; gap: 8px; align-items: center; }
+
+.cover {
+  display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover;
+  border-radius: 12px; background: var(--surface);
+}
+
+/* Shared buttons */
+.like {
+  flex-shrink: 0; height: 34px; padding: 0 12px;
+  border: 1px solid var(--line); border-radius: 8px; background: #fff;
+  font-size: 13px; color: var(--ink); white-space: nowrap; cursor: pointer;
+}
+.like:hover { border-color: var(--accent); }
+.like[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+.play {
+  height: 34px; padding: 0 14px;
+  border: 0; border-radius: 8px; background: var(--accent); color: #fff;
+  font-size: 13px; font-weight: 600; white-space: nowrap; cursor: pointer;
+}
+.card-foot .play { flex: 1; }
+
+/* List (reference: melon_02) */
+.chart { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+.row {
+  display: flex; align-items: center; gap: 16px;
+  padding: 14px 0; border-bottom: 1px solid var(--line);
+}
+.row-rank {
+  flex-shrink: 0; width: 32px;
+  font-size: 16px; font-weight: 800; text-align: center;
+}
+.row-thumb { flex-shrink: 0; width: 56px; }
+.row-thumb .cover { border-radius: 8px; }
+.row-info { flex: 1; min-width: 0; }
+.row-title {
+  font-size: 15px; font-weight: 700;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.row-artist {
+  margin-top: 4px; font-size: 13px; color: var(--muted);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.row-side { flex-shrink: 0; display: flex; gap: 8px; }
+
+@media (min-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next { top: calc(50% - 20px); }
+}
+@media (max-width: 767px) {
+  .swiper-button-prev,
+  .swiper-button-next { display: none; }
+  .card-foot .like,
+  .card-foot .play { height: 30px; padding: 0 8px; font-size: 12px; }
+  .row-side .play { padding: 0 10px; }
+}

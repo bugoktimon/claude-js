@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>멜론 TOP 100</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+<link rel="stylesheet" href="css/melon.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="header">
+    <h1 class="title">멜론 TOP 100</h1>
+  </header>
+
+  <h2 class="h2">TOP 12</h2>
+  <section class="top-banner">
+    <div class="swiper" id="top-swiper">
+      <div class="swiper-wrapper" id="top-slides"></div>
+      <div class="swiper-button-prev" id="top-prev"></div>
+      <div class="swiper-button-next" id="top-next"></div>
+      <div class="swiper-pagination" id="top-dots"></div>
+    </div>
+  </section>
+
+  <h2 class="h2">전체 순위</h2>
+  <ol class="chart" id="chart"></ol>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="js/melon-data.js"></script>
+<script src="js/melon.js"></script>
+</body>
+</html>
